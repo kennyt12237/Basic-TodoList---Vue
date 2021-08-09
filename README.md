@@ -18,7 +18,7 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-### Functionalities:
+# Functionalities:
 - Clicking checkbox crosses the item
 - delete an item
 - Add item with user input text
@@ -35,7 +35,7 @@ TodoItems:
 - Delete button to delete item
 
 ## Steps for implementing each functionality:
-# Clicking checkbox crosses item
+### Clicking checkbox crosses item
 - On checkbox tag:
     -  add directive v-on:click invoking method itemChecked() passing index and checked as parameter
 - In TodoItem component methods:
@@ -45,7 +45,7 @@ TodoItems:
     - create a mutation function changeItem() with state and payload as parameter
         - Implement method to update item in state
 
-# Deleting a todo item
+### Deleting a todo item
 - On delete button tag: 
     - add directive v-on:click invoking method deleteItem() passing index as parameter
 - In TodoItem component methods:
@@ -55,7 +55,7 @@ TodoItems:
     - create a mutation function deleteItem with state and payload as parameter
         - Implement method to delete an item in state (hint: use splice)
 
-# Add item with user input
+### Add item with user input
 - In text input: 
     - Add directive v-model with value as any variable name (e.g message)
 - In add item button:
