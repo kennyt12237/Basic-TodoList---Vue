@@ -1,15 +1,39 @@
 <template>
+  <div>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p>
+    <input v-model="textItem" placeholder="Edit Me"/>
+    <button v-on:click="addItem(textItem)">
+      Add Item
+    </button>
+  </p>
+  <TodoList :todoItems="todos"/>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TodoList from './components/TodoList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TodoList
+  },
+   data() {
+    return {
+      todos: this.$store.getters.getItems,
+      textItem: ""
+    }
+   },
+  methods: {
+    addItem(message) {
+      if (message) {
+        this.$store.commit('addItems', {
+          name: message,
+          completed: false
+        })
+      }
+    }
   }
 }
 </script>
